@@ -7,7 +7,37 @@ from aluno.aluno import Aluno
 # PARTE 1 — Encontre os bugs
 # Escreva um teste para cada bug descrito no guia da atividade.
 # =============================================================
+def test_menor_nota_aluno():
+    aluno: Aluno = Aluno(
+        nome="Artur", 
+        notas=[10, 9, 8.8], 
+        faltas=12)
+    
+    assert aluno.menor_nota() == 8.8
 
+def test_nota_media_aluno():
+    aluno: Aluno = Aluno(
+        nome="Artur", 
+        notas=[10, 4.4, 3.6], 
+        faltas=12)
+    
+    assert aluno.calcular_media() == 6.0
+    
+def test_nota_aluno_exatamente_media():
+    aluno: Aluno = Aluno(
+        nome="Artur", 
+        notas=[6, 6, 6], 
+        faltas=12)
+    
+    assert aluno.situacao() == "Aprovado"
+    
+def test_media_aluno_arrendodada():
+    aluno: Aluno = Aluno(
+        nome="Artur", 
+        notas=[10, 9.7, 8.9], 
+        faltas=12)
+    
+    assert aluno.calcular_media_arredondada() == 10
 #
 
 # =============================================================
