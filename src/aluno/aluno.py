@@ -15,10 +15,8 @@ class Aluno:
     def situacao_final(self, total_aulas: int) -> str:
         if((self.faltas / total_aulas) > 0.25):
             return "Reprovado por Falta"
-        elif(sum(self.notas) / len(self.notas) >= 6.0):
-            return "Aprovado"
-        else:
-            return "Reprovado por Nota"
+        
+        return "Aprovado" if self.situacao() == "Aprovado" else "Reprovado por Nota"
 
     def maior_nota(self) -> float:
         return max(self.notas)
