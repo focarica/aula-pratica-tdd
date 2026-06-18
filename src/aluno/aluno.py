@@ -5,10 +5,10 @@ class Aluno:
         self.faltas = faltas
 
     def calcular_media(self) -> float:
-        return sum(self.notas) / 4 
+        return sum(self.notas) / len(self.notas)
 
     def situacao(self) -> str:
-        if self.calcular_media() > 6.0:
+        if self.calcular_media() >= 6.0:
             return "Aprovado"
         return "Reprovado"
 
@@ -16,7 +16,7 @@ class Aluno:
         return max(self.notas)
 
     def menor_nota(self) -> float:
-        return max(self.notas)
+        return min(self.notas)
 
     def calcular_media_arredondada(self) -> float:
-        return int(sum(self.notas) / len(self.notas))
+        return round(sum(self.notas) / len(self.notas))
