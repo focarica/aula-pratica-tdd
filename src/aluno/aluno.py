@@ -28,5 +28,5 @@ class Aluno:
         return round(sum(self.notas) / len(self.notas))
     
     def enviar_boletim(self, email_service) -> None:
-        if((sum(self.notas) / len(self.notas) < 6.0)):
-            email_service.enviar(self.nome, (sum(self.notas) / len(self.notas)))
+        if self.situacao() != "Aprovado":
+            email_service.enviar(self.nome, self.calcular_media())
