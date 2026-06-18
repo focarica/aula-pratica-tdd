@@ -6,4 +6,10 @@ class Turma:
         pass
     
     def qtd_aluno_aprovados(self, alunos: list[Aluno]) -> int:
-        pass
+        count = 0
+        
+        for i in range(len(alunos)):
+            if(alunos[i].situacao() == "Aprovado"):
+                count += 1
+        
+        return count
