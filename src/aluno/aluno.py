@@ -12,6 +12,9 @@ class Aluno:
             return "Aprovado"
         return "Reprovado"
 
+    def situacao_final(total_aulas: int) -> str:
+        pass
+    
     def maior_nota(self) -> float:
         return max(self.notas)
 
