@@ -55,7 +55,7 @@ def test_todos_alunos_aprovados():
         Aluno("Maria", [10, 9, 10, 9])
     ]
     
-    assert turma.qtd_aluno_aprovados(alunos) == 2
+    assert turma.contar_aprovados(alunos) == 2
     
 def test_todos_alunos_reprovados():
     turma = Turma()
@@ -65,7 +65,7 @@ def test_todos_alunos_reprovados():
         Aluno("Ana", [5, 5, 5, 5])
     ]
     
-    assert turma.qtd_aluno_aprovados(alunos) == 0
+    assert turma.contar_aprovados(alunos) == 0
 
 def test_lista_alunos_mista():
     turma = Turma()
@@ -76,13 +76,13 @@ def test_lista_alunos_mista():
         Aluno("Maria", [10, 9, 10, 9]) 
     ]
     
-    assert turma.qtd_aluno_aprovados(alunos) == 2
+    assert turma.contar_aprovados(alunos) == 2
 
 def test_lista_alunos_vazia():
     turma = Turma()
     alunos = []
     
-    assert turma.qtd_aluno_aprovados(alunos) == 0
+    assert turma.contar_aprovados(alunos) == 0
 
 # Requisito 2 — situacao_final(total_aulas) -> str
 # Escreva os testes ANTES de implementar o método

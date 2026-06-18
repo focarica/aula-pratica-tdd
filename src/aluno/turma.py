@@ -5,5 +5,5 @@ class Turma:
     def __init__(self):
         pass
     
-    def qtd_aluno_aprovados(self, alunos: list[Aluno]) -> int:
+    def contar_aprovados(self, alunos: list[Aluno]) -> int:
         return len([aluno for aluno in alunos if aluno.situacao() == "Aprovado"])
