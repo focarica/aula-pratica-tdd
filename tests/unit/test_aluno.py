@@ -1,6 +1,7 @@
 import pytest
 from unittest.mock import MagicMock
 from aluno.aluno import Aluno
+from aluno.turma import Turma
 
 
 # =============================================================
@@ -47,7 +48,41 @@ def test_media_aluno_arrendodada():
 
 # Requisito 1 — contar_aprovados(lista_de_alunos) -> int
 # Escreva os testes ANTES de implementar a função
+def test_todos_alunos_aprovados():
+    turma = Turma()
+    alunos = [
+        Aluno("João", [8, 7, 9, 8]), 
+        Aluno("Maria", [10, 9, 10, 9])
+    ]
+    
+    assert turma.qtd_aluno_aprovados(alunos) == 2
+    
+def test_todos_alunos_reprovados():
+    turma = Turma()
 
+    alunos = [
+        Aluno("Pedro", [4, 5, 3, 4]), 
+        Aluno("Ana", [5, 5, 5, 5])
+    ]
+    
+    assert turma.qtd_aluno_aprovados(alunos) == 0
+
+def test_lista_alunos_mista():
+    turma = Turma()
+
+    alunos = [
+        Aluno("João", [8, 7, 9, 8]),   
+        Aluno("Pedro", [4, 5, 3, 4]), 
+        Aluno("Maria", [10, 9, 10, 9]) 
+    ]
+    
+    assert turma.qtd_aluno_aprovados(alunos) == 2
+
+def test_lista_alunos_vazia():
+    turma = Turma()
+    alunos = []
+    
+    assert turma.qtd_aluno_aprovados(alunos) == 0
 
 # Requisito 2 — situacao_final(total_aulas) -> str
 # Escreva os testes ANTES de implementar o método
